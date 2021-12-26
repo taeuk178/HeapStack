@@ -14,8 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        firstTest()
         return true
     }
+    
+    func firstTest() {
+        let reference = ReferenceType()
+        let value = ValueType(id: "123", isActive: false)
+        
+        secondTest()
+    }
+    
+    
+    func secondTest() {
+        let reference = ReferenceType()
+        let value = ValueType(id: "456", isActive: true)
+        print("BreakPoint")
+    }
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -34,3 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+class ReferenceType {
+    
+}
+
+struct ValueType {
+    let id: String
+    let isActive: Bool
+    
+    init(id: String, isActive: Bool) {
+        self.id = id
+        self.isActive = isActive
+    }
+}
